@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@100;300&display=swap');
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Specific
+    4. Areas
+        4.1 Header
+            4.1.1 Navigation Bar
+            4.1.2 Hero Section
+        4.2 Main
+        4.3 Footer
+            4.3.1 Form
+    5. Media Queries
+////////////////////////*/
+
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /*border: 1px solid red;*/
+}
+
+:root {
+    --blue-color: #4845E4;
+    --lightgrey-color: #F3F6F9;
+    --black-color: #0C0C0C;
+}
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+h1  {
+    /*font-family: ;*/
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+/* ------------------------------- 3. Layout --------------------------------------- */
+/* ---------------------- 3.1 Reusables ----------------------- */
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.innerContainer {
+    flex-basis: 1200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+}
+
+
+/* ---------------------- 3.2 Specific ------------------------ */
+
+.nameList {
+    background-color: var(--lightgrey-color);
+    width: 100%;
+    min-height: 600px;
+}
+/* ------------------------------- 4. Areas ---------------------------------------- */
+/* ---------------------- 4.1 Header -------------------------- */
+/* --------------- 4.1.1 Navigation Bar ---------------- */
+/* --------------- 4.1.2 Hero Section ------------------ */
+/* ---------------------- 4.2 Main ---------------------------- */
+img {
+    max-width: 1200px;
+}
+/* ---------------------- 4.3 Footer -------------------------- */
+footer {
+    background-color: var(--black-color);
+    color: white;
+    padding: 1rem;
+}
+/* ------------------------------- 5. Media Queries -------------------------------- */
