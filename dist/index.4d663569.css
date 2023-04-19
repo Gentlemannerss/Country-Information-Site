@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@100;300&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +11,12 @@
   --blue-color: #4845e4;
   --lightgrey-color: #f3f6f9;
   --black-color: #0c0c0c;
+  --grey-color: grey;
+}
+
+h1 {
+  font-family: Gochi Hand, cursive;
+  font-size: 100px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -25,7 +32,6 @@ h2, h3, h4, h5, h6 {
 
 .innerContainer {
   text-align: center;
-  border-radius: 5px;
   flex-direction: column;
   flex-basis: 1200px;
   justify-content: center;
@@ -36,12 +42,46 @@ h2, h3, h4, h5, h6 {
 
 .nameList {
   background-color: var(--lightgrey-color);
-  width: 100%;
-  min-height: 600px;
+  max-width: 1200px;
+  border: var(--grey-color) 2px solid;
+  border-radius: 10px;
 }
 
-img {
-  max-width: 1200px;
+.nameList > ul > li {
+  list-style: none;
+}
+
+.blue {
+  color: #00f;
+}
+
+.red {
+  color: red;
+}
+
+.darkgreen {
+  color: #006400;
+}
+
+.yellow {
+  color: #ffd435;
+}
+
+.purple {
+  color: purple;
+}
+
+.lightgreen {
+  color: #90ee90;
+}
+
+.landBox {
+  flex-basis: 200px;
+  display: flex;
+}
+
+.landBox > img {
+  width: 70px;
 }
 
 footer {

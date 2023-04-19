@@ -562,16 +562,64 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const countryList = document.getElementById("countries");
 async function fetchData() {
-    const response = await (0, _axiosDefault.default).get("https://restcountries.com/v3.1/all?fields=name,flag,population,continents");
-    console.log(response);
-    /*      for (i = 0; i < response.data; i++) {}        */ /*      response.map((country) => {})                 */ countryList.innerHTML = `
-    <li>Dit is de naam : ${response.data[0].name.common}</li>
-    <img src="${response.data[0].flag}" alt="this is the flag of ${response.data[0].name.common}">
-    <p>Has a population of ${response.data[0].population}</p>
-        `;
+    try {
+        const response1 = await (0, _axiosDefault.default).get("https://restcountries.com/v3.1/all?fields=name,flags,population,continents");
+        /*      for (i = 0; i < response.data; i++) {}        */ /*      response.map((country) => {})                 */ const countries = response1.data;
+        allCountries(response1);
+        buttons(countries);
+    } catch (e) {
+        console.error(e);
+    }
 }
 fetchData();
-function fetchRegion() {}
+function allCountries(countries) {
+    countryList.innerHTML = countries.data.map((country)=>{
+        return `<li>
+        <div class="landBox">
+            <img src="${country.flags.png}" alt="this is the flag of ${country.name.common}"/>
+                <div class="populationBox">
+                    <h3 class="${fetchRegion(country.continents[0])}">${country.name.common}</h3>
+                    <p>Has a population of ${country.population}</p>
+                </div> 
+            </div>
+        </li>`;
+    }).join("");
+}
+function fetchRegion(region) {
+    switch(region){
+        case "Africa":
+            return "blue";
+        case "North America":
+            return "darkgreen";
+        case "Asia":
+            return "red";
+        case "Europe":
+            return "yellow";
+        case "Oceania":
+            return "purple";
+        case "Antarctica":
+            return "white";
+        case "South America":
+            return "lightgreen";
+    }
+}
+function buttons(countries) {
+    const sortName = document.getElementById("sort-name");
+    sortName.addEventListener("click", ()=>{
+        countries.sort((a, b)=>a.name.common.localeCompare(b.name.common));
+        allCountries();
+    });
+    const sortPopulation = document.getElementById("sort-population");
+    sortPopulation.addEventListener("click", ()=>{
+        countries.sort((a, b)=>a.population - b.population);
+        allCountries(response.data);
+    });
+    const sortRegion = document.getElementById("sort-region");
+    sortRegion.addEventListener("click", ()=>{
+        countries.sort((a, b)=>a.continents[0].localeCompare(b.continents[0])); /*a.region.localeCompare(b.region));*/ 
+        allCountries(response.data);
+    });
+}
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

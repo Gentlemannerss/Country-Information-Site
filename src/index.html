@@ -9,17 +9,24 @@
 <body>
 <header>
     <div class="outerContainer">
-        <div class="innerContainer"><h1>world regions</h1></div>
+        <div class="innerContainer">
+            <h1>world regions</h1>
+        </div>
     </div>
 </header>
 <main>
     <div class="outerContainer">
-        <div class="innerContainer">
+            <figure class="innerContainer">
             <img src="./assets/world_map.png" alt="picture of the world continents, indicated by diffrent colors">
-        </div>
+            </figure>
     </div>
     <div class="outerContainer">
         <div class="innerContainer nameList">
+            <div class="buttonDiv">
+                <button id="sort-name">Sort by Name</button>
+                <button id="sort-population">Sort by Population</button>
+                <button id="sort-region">Sort by Region</button>
+            </div>
             <ul id="countries"></ul>
         </div>
     </div>

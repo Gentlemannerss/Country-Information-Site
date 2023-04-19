@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@100;300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -17,7 +17,6 @@
     5. Media Queries
 ////////////////////////*/
 
-
 /* ------------------------------- 1. Global Styles -------------------------------- */
 * {
     padding: 0;
@@ -31,11 +30,13 @@
     --blue-color: #4845E4;
     --lightgrey-color: #F3F6F9;
     --black-color: #0C0C0C;
+    --grey-color: grey;
 }
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 h1  {
-    /*font-family: ;*/
+    font-family: 'Gochi Hand', cursive;
+    font-size: 100px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -54,7 +55,6 @@ h2, h3, h4, h5, h6 {
     flex-basis: 1200px;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -66,16 +66,51 @@ h2, h3, h4, h5, h6 {
 
 .nameList {
     background-color: var(--lightgrey-color);
-    width: 100%;
-    min-height: 600px;
+    max-width: 1200px;
+    border-radius: 10px;
+    border: var(--grey-color) 2px solid;
+}
+
+.nameList > ul > li {
+    list-style: none;
+
 }
 /* ------------------------------- 4. Areas ---------------------------------------- */
 /* ---------------------- 4.1 Header -------------------------- */
 /* --------------- 4.1.1 Navigation Bar ---------------- */
 /* --------------- 4.1.2 Hero Section ------------------ */
 /* ---------------------- 4.2 Main ---------------------------- */
-img {
-    max-width: 1200px;
+.blue {
+    color : blue;
+}
+
+.red {
+    color : red;
+}
+
+.darkgreen {
+    color: darkgreen;
+}
+
+.yellow {
+    color: #FFD435;
+}
+
+.purple {
+    color: purple;
+}
+
+.lightgreen {
+    color: lightgreen;
+}
+
+.landBox {
+    display: flex;
+    flex-basis: 200px;
+}
+
+.landBox > img {
+    width: 70px;
 }
 /* ---------------------- 4.3 Footer -------------------------- */
 footer {
