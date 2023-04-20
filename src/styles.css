@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@100;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:ital,wght@0,300;1,100&display=swap');
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -22,7 +21,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     /*border: 1px solid red;*/
 }
 
@@ -40,7 +38,12 @@ h1  {
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto Light', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Thin', sans-serif;
+    font-style: italic;
 }
 /* ------------------------------- 3. Layout --------------------------------------- */
 /* ---------------------- 3.1 Reusables ----------------------- */
@@ -71,9 +74,17 @@ h2, h3, h4, h5, h6 {
     border: var(--grey-color) 2px solid;
 }
 
+.column {
+    column-count: 3;
+    column-width: 20rem;
+    /*column-gap: unset;*/
+    flex: 1 0 auto;
+}
+
 .nameList > ul > li {
     list-style: none;
-
+    padding: 0.5rem;
+    /*max-width: 290px;     Je zou het een maximale width kunnen geven*/
 }
 /* ------------------------------- 4. Areas ---------------------------------------- */
 /* ---------------------- 4.1 Header -------------------------- */
@@ -104,6 +115,10 @@ h2, h3, h4, h5, h6 {
     color: lightgreen;
 }
 
+.worldMap {
+    max-width: 100%;
+ }
+
 .landBox {
     display: flex;
     flex-basis: 200px;
@@ -111,6 +126,7 @@ h2, h3, h4, h5, h6 {
 
 .landBox > img {
     width: 70px;
+    margin-right: 0.3rem;
 }
 /* ---------------------- 4.3 Footer -------------------------- */
 footer {
@@ -119,3 +135,9 @@ footer {
     padding: 1rem;
 }
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (max-width: 1200px) {
+    .worldMap > img {
+        overflow: overlay;
+    }
+}

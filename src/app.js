@@ -1,4 +1,4 @@
-import axios, {all} from "axios";
+import axios from "axios";
 
 const countryList = document.getElementById("countries")
 async function fetchData() {
@@ -58,19 +58,19 @@ function buttons(countries) {
     const sortName = document.getElementById('sort-name');
     sortName.addEventListener("click", () => {
         countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
-        allCountries();
+        allCountries({data: countries});
     });
 
     const sortPopulation = document.getElementById('sort-population');
     sortPopulation.addEventListener("click", () => {
         countries.sort((a, b) => a.population - b.population);
-        allCountries(response.data);
+        allCountries({data: countries});
     });
 
 
     const sortRegion = document.getElementById('sort-region');
     sortRegion.addEventListener("click", () => {
         countries.sort((a, b) => a.continents[0].localeCompare(b.continents[0]));               /*a.region.localeCompare(b.region));*/
-        allCountries(response.data);
+        allCountries({data: countries});
     });
 }
