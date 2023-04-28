@@ -74,3 +74,27 @@ function buttons(countries) {
         allCountries({data: countries});
     });
 }
+
+/*
+// SearchPage.Html
+
+const resultBox = document.getElementById("resultBox");
+
+async function fetchCounty() {
+    try {
+        const response = await axios.get("https://restcountries.com/v3.1/all?fields=name,flags,population,capital,subregion,currencies");
+        const countries = response.data;
+        resultBox.innerHTML =
+            `
+<img src="${countries.flags.png}" alt="this is the flag of ${countries.name.common}"/>
+<h3>${countries.name.common}</h3>
+<p>${countries.name} is situated in ${countries.subregion}. It has a population of ${countries.population} people.
+The capital is ${countries.capital} and you can pay with ${countries.currencies}</p>
+
+        console.log(countries);
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+fetchCounty();*/

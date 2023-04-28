@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"lKzq4":[function(require,module,exports) {
+})({"1fnbM":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "fe4256060641b553";
+module.bundle.HMR_BUNDLE_ID = "b5e949d84684ab7b";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,99 +556,54 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"bNKaB":[function(require,module,exports) {
+},{}],"cvenI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-const countryList = document.getElementById("countries");
-async function fetchData() {
+const resultBox = document.getElementById("resultBox");
+const inputField = document.getElementById("inputField");
+async function fetchCountry(country) {
     try {
-        const response = await (0, _axiosDefault.default).get("https://restcountries.com/v3.1/all?fields=name,flags,population,continents");
-        /*      for (i = 0; i < response.data; i++) {}        */ /*      response.map((country) => {})                 */ const countries = response.data;
-        allCountries(response);
-        buttons(countries);
+        const response = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all?fields=name,flags,population,capital,subregion,currencies");
+        const countries = response.data;
+        const { name , flags: { svg: flag  } , capital , currencies , subregion , population  } = countries[country];
+        const curr = currencies.map((currency)=>currency.name);
+        resultBox.innerHTML = `
+<img src="${flag}" alt="this is the flag of ${name}"/>
+<h3>${name}</h3>
+<p>${name} is situated in ${subregion}. It has a population of ${population} people.
+The capital is ${capital} and you can pay with ${curr}</p>
+`;
+        console.log(countries);
     } catch (e) {
         console.error(e);
     }
 }
-fetchData();
-function allCountries(countries) {
-    countryList.innerHTML = countries.data.map((country)=>{
-        return `<li>
-        <div class="landBox">
-            <img src="${country.flags.png}" alt="this is the flag of ${country.name.common}"/>
-                <div class="populationBox">
-                    <h3 class="${fetchRegion(country.continents[0])}">${country.name.common}</h3>
-                    <p>Has a population of ${country.population}</p>
-                </div> 
-            </div>
-        </li>`;
-    }).join("");
-}
-function fetchRegion(region) {
-    switch(region){
-        case "Africa":
-            return "blue";
-        case "North America":
-            return "darkgreen";
-        case "Asia":
-            return "red";
-        case "Europe":
-            return "yellow";
-        case "Oceania":
-            return "purple";
-        case "Antarctica":
-            return "white";
-        case "South America":
-            return "lightgreen";
-    }
-}
-function buttons(countries) {
-    const sortName = document.getElementById("sort-name");
-    sortName.addEventListener("click", ()=>{
-        countries.sort((a, b)=>a.name.common.localeCompare(b.name.common));
-        allCountries({
-            data: countries
-        });
-    });
-    const sortPopulation = document.getElementById("sort-population");
-    sortPopulation.addEventListener("click", ()=>{
-        countries.sort((a, b)=>a.population - b.population);
-        allCountries({
-            data: countries
-        });
-    });
-    const sortRegion = document.getElementById("sort-region");
-    sortRegion.addEventListener("click", ()=>{
-        countries.sort((a, b)=>a.continents[0].localeCompare(b.continents[0])); /*a.region.localeCompare(b.region));*/ 
-        allCountries({
-            data: countries
-        });
-    });
-} /*
-// SearchPage.Html
-
-const resultBox = document.getElementById("resultBox");
-
-async function fetchCounty() {
+const searchButton = document.querySelector(".search-box button");
+searchButton.addEventListener("click", async (event)=>{
+    event.preventDefault(); // prevent form submission
+    const searchValue = inputField.value;
+    console.log(searchValue); // log search value to console
     try {
-        const response = await axios.get("https://restcountries.com/v3.1/all?fields=name,flags,population,capital,subregion,currencies");
-        const countries = response.data;
-        resultBox.innerHTML =
-            `
-<img src="${countries.flags.png}" alt="this is the flag of ${countries.name.common}"/>
-<h3>${countries.name.common}</h3>
-<p>${countries.name} is situated in ${countries.subregion}. It has a population of ${countries.population} people.
-The capital is ${countries.capital} and you can pay with ${countries.currencies}</p>
-
-        console.log(countries);
+        await fetchCountry(searchValue);
     } catch (e) {
-        console.error(e)
+        console.error(e);
     }
-}
+}); /* Option 1:
 
-fetchCounty();*/ 
+const searchButton = document.querySelector(".search-box button");
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lKzq4","bNKaB"], "bNKaB", "parcelRequirecb08")
+searchButton.addEventListener("click", (event) => {
+    event.preventDefault(); // prevent form submission
+    const searchValue = inputField.value;
+    console.log(searchValue); // log search value to console
+    fetchCounty(searchValue); // call fetchCountry function with searchValue
+});*/  // PseudoCode
+ // button maken voor het input field, en hier de event listner aan hangen
+ // event listner maken die functie fetchcountry uitvoert! Hiermee vuur je de functie af.
+ // maak een functie die de currency's opvangt en deze terug geeft als String
+ // maak een fucntie die de talen opvangt en deze terug geeft als String
 
-//# sourceMappingURL=index.0641b553.js.map
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1fnbM","cvenI"], "cvenI", "parcelRequirecb08")
+
+//# sourceMappingURL=searchPage.4684ab7b.js.map
