@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:ital,wght@0,300;1,100&display=swap');
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusable
+        3.2 Specific
+    4. Areas
+        4.1 Header
+            4.1.1 Navigation Bar
+            4.1.2 Hero Section
+        4.2 Main
+        4.3 Footer
+            4.3.1 Form
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+:root {
+    --blue-color: #4845E4;
+    --lightgrey-color: #F3F6F9;
+    --black-color: #0C0C0C;
+    --grey-color: grey;
+}
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+h1  {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 100px;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Light', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Thin', sans-serif;
+    font-style: italic;
+}
+/* ------------------------------- 3. Layout --------------------------------------- */
+/* ---------------------- 3.1 Reusable ----------------------- */
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.innerContainer {
+    /*flex-basis: 1200px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    flex : 1 1 1200px;
+}
+
+
+/* ---------------------- 3.2 Specific ------------------------ */
+
+.nameList {
+    background-color: var(--lightgrey-color);
+    max-width: 1200px;
+    border-radius: 10px;
+    border: var(--grey-color) 2px solid;
+}
+
+.column {
+    column-count: 3;
+    column-width: 20rem;
+    /*column-gap: unset;*/
+    flex: 1 0 auto;
+}
+
+.nameList > ul > li {
+    list-style: none;
+    padding: 0.5rem;
+    /*max-width: 290px;     Je zou het een maximale width kunnen geven*/
+}
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+#resultBox {
+    margin-top: 1rem;
+    max-width: 500px;
+}
+
+/* ---------------------- 4.1 Header -------------------------- */
+/* --------------- 4.1.1 Navigation Bar ---------------- */
+/* --------------- 4.1.2 Hero Section ------------------ */
+/* ---------------------- 4.2 Main ---------------------------- */
+.blue {
+    color : blue;
+}
+
+.red {
+    color : red;
+}
+
+.darkgreen {
+    color: darkgreen;
+}
+
+.yellow {
+    color: #FFD435;
+}
+
+.purple {
+    color: purple;
+}
+
+.lightgreen {
+    color: lightgreen;
+}
+
+img {
+    max-width: 100%;
+ }
+
+.landBox {
+    display: flex;
+    flex-basis: 200px;
+}
+
+.landBox > img {
+    width: 70px;
+    margin-right: 0.3rem;
+}
+/* ---------------------- 4.3 Footer -------------------------- */
+footer {
+    background-color: var(--black-color);
+    color: white;
+    padding: 1rem;
+}
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (max-width: 1200px) {
+    .worldMap > img {
+        overflow: overlay;
+    }
+    h1 {
+        font-size: 50px;
+    }
+}

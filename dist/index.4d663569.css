@@ -1,0 +1,123 @@
+@import "https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:ital,wght@0,300;1,100&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-color: #4845e4;
+  --lightgrey-color: #f3f6f9;
+  --black-color: #0c0c0c;
+  --grey-color: grey;
+}
+
+h1 {
+  font-family: Gochi Hand, cursive;
+  font-size: 100px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: Roboto Light, sans-serif;
+}
+
+p {
+  font-family: Roboto Thin, sans-serif;
+  font-style: italic;
+}
+
+.outerContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.innerContainer {
+  text-align: center;
+  flex-direction: column;
+  flex: 1200px;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  display: flex;
+}
+
+.nameList {
+  background-color: var(--lightgrey-color);
+  max-width: 1200px;
+  border: var(--grey-color) 2px solid;
+  border-radius: 10px;
+}
+
+.column {
+  column-count: 3;
+  column-width: 20rem;
+  flex: 1 0 auto;
+}
+
+.nameList > ul > li {
+  padding: .5rem;
+  list-style: none;
+}
+
+#resultBox {
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.blue {
+  color: #00f;
+}
+
+.red {
+  color: red;
+}
+
+.darkgreen {
+  color: #006400;
+}
+
+.yellow {
+  color: #ffd435;
+}
+
+.purple {
+  color: purple;
+}
+
+.lightgreen {
+  color: #90ee90;
+}
+
+img {
+  max-width: 100%;
+}
+
+.landBox {
+  flex-basis: 200px;
+  display: flex;
+}
+
+.landBox > img {
+  width: 70px;
+  margin-right: .3rem;
+}
+
+footer {
+  background-color: var(--black-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .worldMap > img {
+    overflow: overlay;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */
