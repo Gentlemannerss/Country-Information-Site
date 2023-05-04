@@ -565,16 +565,23 @@ const inputField = document.getElementById("inputField");
 async function fetchCountry(country) {
     try {
         const response = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all?fields=name,flags,population,capital,subregion,currencies");
-        const countries = response.data;
-        const { name , flags: { svg: flag  } , capital , currencies , subregion , population  } = countries[country];
+        const countryObj = response.data.find((obj)=>{
+            return obj.name === country;
+        });
+        if (countryObj === undefined) {
+            // Display error message
+            resultBox.innerHTML = `<p>Sorry, country not found</p>`;
+            return;
+        }
+        const { name , flags: { svg: flag  } , capital , currencies , subregion , population  } = countryObj;
         const curr = currencies.map((currency)=>currency.name);
-        resultBox.innerHTML = `
-<img src="${flag}" alt="this is the flag of ${name}"/>
-<h3>${name}</h3>
-<p>${name} is situated in ${subregion}. It has a population of ${population} people.
-The capital is ${capital} and you can pay with ${curr}</p>
-`;
-        console.log(countries);
+        resultBox.innerHTML = /* Als je += gebruikt kun je ze onder elkaar toevoegen.*/ `
+            <img src="${flag}" alt="this is the flag of ${name}"/>
+            <h3>${name}</h3>
+            <p>${name} is situated in ${subregion}. It has a population of ${population} people.
+            The capital is ${capital} and you can pay with ${curr}</p>
+            `;
+        console.log(countryObj);
     } catch (e) {
         console.error(e);
     }

@@ -4,7 +4,7 @@
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusables
+        3.1 Reusable
         3.2 Specific
     4. Areas
         4.1 Header
@@ -46,7 +46,7 @@ p {
     font-style: italic;
 }
 /* ------------------------------- 3. Layout --------------------------------------- */
-/* ---------------------- 3.1 Reusables ----------------------- */
+/* ---------------------- 3.1 Reusable ----------------------- */
 .outerContainer {
     display: flex;
     justify-content: center;
@@ -88,6 +88,12 @@ p {
     /*max-width: 290px;     Je zou het een maximale width kunnen geven*/
 }
 /* ------------------------------- 4. Areas ---------------------------------------- */
+
+#resultBox {
+    margin-top: 1rem;
+    max-width: 500px;
+}
+
 /* ---------------------- 4.1 Header -------------------------- */
 /* --------------- 4.1.1 Navigation Bar ---------------- */
 /* --------------- 4.1.2 Hero Section ------------------ */
@@ -140,5 +146,8 @@ footer {
 @media screen and (max-width: 1200px) {
     .worldMap > img {
         overflow: overlay;
+    }
+    h1 {
+        font-size: 50px;
     }
 }
